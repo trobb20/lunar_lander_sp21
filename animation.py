@@ -51,4 +51,5 @@ def animate(data,length):
 	#Conduct animation using matplotlib
 	ani = FuncAnimation(fig, update, data_gen(data),
 					init_func=init, interval=inter, repeat=False, blit=True)
-	plt.show()
+
+	return ani,plt
