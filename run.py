@@ -5,13 +5,13 @@ from launch_rocket import launch_rocket
 from IPython.display import HTML
 
 # Test #
-#Hit a 60g tennis ball at 100mph from height 2m
+#Drop a 10kg rocket from 100m with small initial x velocity
 
 m=10
-x0=np.array([0,0])
-v0=np.array([0,0])
+x0=np.array([0,100])
+v0=np.array([1,0])
 t=5
-dt=0.01
+dt=0.1
 myLaunch = launch_rocket(m,x0,v0,t,dt)
 
 #length of animation in seconds
