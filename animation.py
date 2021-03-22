@@ -24,10 +24,15 @@ def animate(data,dt,length):
 	time = sz*dt
 	time_points = [[],[]]
 	ind=0
-	for i in range(int(time)): #This plots the points that signify 1 s of time
-		ind = int(sz*(i/time))-1
-		time_points[0].append(data[0,ind])
-		time_points[1].append(data[1,ind])
+	for i in range(int(time)+1): #This plots the points that signify 1 s of time
+		ind = int(i/dt)
+		try:
+			time_points[0].append(data[0,ind])
+			time_points[1].append(data[1,ind])
+		except IndexError:
+			ind = int(i/dt)-1
+			time_points[0].append(data[0,ind])
+			time_points[1].append(data[1,ind])
 
 
 	#Set up plot
